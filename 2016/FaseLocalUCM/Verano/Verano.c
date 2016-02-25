@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int MCD(int a, int b) {
   int r;
   int c;
@@ -22,8 +24,20 @@ int MCD(int a, int b) {
   return a;
 }
 
-int main()
-{
-
+int main() {
+  int first;
+  scanf("%d", &first);
+  while (first != 0) {
+    int second = first;
+    int total = 0;
+    int mcd = 0;
+    while (second != 0) {
+      mcd = MCD (mcd, second);
+      total += second;
+      scanf("%d", &second);
+    }
+    printf("%d\n", total/mcd);
+    scanf("%d", &first);
+  }
   return 0;
 }
